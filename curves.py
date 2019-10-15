@@ -5,6 +5,7 @@ from vincent import draw_stroke
 
 
 def draw_filled_arc(center_coord, painting_stroke, max_radius,
+                    gap=1, alpha=0.5,
                     min_radius=1, starting_angle=0, ending_angle=TWO_PI, angle_increment=PI/8):
 
     # Configuration - TODO may want to extract to a config, or add dependency to length/weight
@@ -27,14 +28,15 @@ def draw_filled_arc(center_coord, painting_stroke, max_radius,
             end_x = x + x_wobble + int(cos(angle) * (length + length_variation))
             end_y = y + y_wobble + int(sin(angle) * (length + length_variation))
 
-            draw_stroke((x, y), (end_x, end_y), painting_stroke.weight + weight_variation, painting_stroke.palette)
+            draw_stroke((x, y), (end_x, end_y), painting_stroke.weight + weight_variation, 
+                        painting_stroke.palette, alpha)
 
             # Next x, y are without the wobble/variation to stay on the same line:
             x = x + int(cos(angle) * (length + 2))
             y = y + int(sin(angle) * (length + 2))
 
             angle += angle_increment
-        radius -= int(painting_stroke.weight / 3) + 1
+        radius -= max(int(gap * painting_stroke.weight), 1)
 
 
 def calculate_length_from_radius(radius, angle_increment):
