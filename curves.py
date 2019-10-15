@@ -12,13 +12,16 @@ def draw_filled_arc(center_coord, painting_stroke, max_radius,
     x_wobble_range = range(-3, 4)
     y_wobble_range = range(-4, 5)
 
+    translate(center_coord[0], center_coord[1])
+    rotate(starting_angle)
+
     radius = max_radius
     while radius >= min_radius:
-        length = calculate_length_from_radius(radius, angle_increment)
-        x, y = center_coord[0] - int(length / 2), center_coord[1] - radius
+        length = calculate_length_from_radius(radius, angle_increment) - gap_x
+        x, y = - int(length / 2), - radius
 
-        angle = starting_angle
-        while angle < ending_angle:
+        angle = 0
+        while angle < (ending_angle - starting_angle):
             x_wobble = choice(x_wobble_range)
             y_wobble = choice(y_wobble_range)
 
@@ -38,6 +41,7 @@ def draw_filled_arc(center_coord, painting_stroke, max_radius,
             angle += angle_increment
         radius -= max(int(gap_y * painting_stroke.weight), 1)
 
+    reset_transforms()
 
 def calculate_length_from_radius(radius, angle_increment):
     """ Calculates the (rough) length of the stroke required to draw a circle
