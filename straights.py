@@ -5,7 +5,7 @@ from vincent import draw_stroke
 
 
 def draw_directional_lines(starting_coord, painting_stroke, width, height, 
-                           angle=0, gap=1, alpha=0.5):
+                           angle=0, gap_x=0, gap_y=1, alpha=0.5):
 
     # Configuration - TODO may want to extract to a config, or add dependency to length/weight
     x_wobble_range = range(-3, 4)
@@ -29,9 +29,9 @@ def draw_directional_lines(starting_coord, painting_stroke, width, height,
 
             draw_stroke((x, y), (end_x, end_y), painting_stroke.weight + weight_variation, 
                         painting_stroke.palette, alpha)
-            x = end_x
+            x = end_x + gap_x
 
         x = 0
-        y += max(int(gap * painting_stroke.weight), 1)
+        y += max(int(gap_y * painting_stroke.weight), 1)
 
     reset_transforms()
