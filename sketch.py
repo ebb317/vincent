@@ -17,6 +17,15 @@ def setup():
 def draw():
     background(*bg_color)
 
+    # Scaffold ---
+    stroke(255)
+    stroke_weight(3)
+    for x in range(100, canvas_x, 100):
+        line((x, 0), (x, canvas_y))
+    for y in range(100, canvas_y, 100):
+        line((0,y), (canvas_x,y))
+    
+    
     # Starry Night ---
     # Sky
 
