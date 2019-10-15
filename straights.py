@@ -4,7 +4,8 @@ from random import choice, uniform
 from vincent import draw_stroke
 
 
-def draw_directional_lines(starting_coord, painting_stroke, width, height, angle=0):
+def draw_directional_lines(starting_coord, painting_stroke, width, height, 
+                           angle=0, gap=1, alpha=0.5):
 
     # Configuration - TODO may want to extract to a config, or add dependency to length/weight
     x_wobble_range = range(-3, 4)
@@ -26,10 +27,10 @@ def draw_directional_lines(starting_coord, painting_stroke, width, height, angle
             end_x = x + x_wobble + painting_stroke.length + length_variation
             end_y = y + y_wobble
 
-            draw_stroke((x, y), (end_x, end_y), painting_stroke.weight + weight_variation, painting_stroke.palette)
+            draw_stroke((x, y), (end_x, end_y), painting_stroke.weight + weight_variation, painting_stroke.palette, alpha)
             x = end_x
 
         x = 0
-        y += int(1.5 * painting_stroke.weight)
+        y += int(gap * painting_stroke.weight)
 
     reset_transforms()
