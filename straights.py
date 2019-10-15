@@ -27,10 +27,11 @@ def draw_directional_lines(starting_coord, painting_stroke, width, height,
             end_x = x + x_wobble + painting_stroke.length + length_variation
             end_y = y + y_wobble
 
-            draw_stroke((x, y), (end_x, end_y), painting_stroke.weight + weight_variation, painting_stroke.palette, alpha)
+            draw_stroke((x, y), (end_x, end_y), painting_stroke.weight + weight_variation, 
+                        painting_stroke.palette, alpha)
             x = end_x
 
         x = 0
-        y += int(gap * painting_stroke.weight)
+        y += max(int(gap * painting_stroke.weight), 1)
 
     reset_transforms()
