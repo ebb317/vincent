@@ -52,10 +52,7 @@ The strokes randomly picks a color from the array of colors defined by the Paint
 In the sketch sample, I used multipliers to increase the chance for specific colors to be picked.
 
 ## Yeah, I know...
-This is grossly inefficient, and isn't much in terms of coding standards.  
-The final results is also a bit questionable.
-
-I wanted to see if the wobble, and randomising color could look like post-impressionism.  
+I just wanted to see if the wobble, and randomising color could look like post-impressionism.  
 With more efforts, maybe...
 
 Silver lining is you get a Readme file.
