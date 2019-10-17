@@ -1,7 +1,9 @@
 # vincent
 
-P5 Drawing Extension - Quickly done as a coding challenge.  
+P5 Drawing Extension - Post-impressionist functions (coding challenge)
 Running sketch.py with no argument draws a semblance of 'Starry Night' from Vincent Van Gogh.
+
+![Kinda Starry Night](starry-night.png)
 
 ## Functions available
 vincent.py implements the following:
