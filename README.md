@@ -18,8 +18,8 @@ Parameters:
   Remember that wobble and length variation will also add some gaps.
   - **alpha** (= 0.5) - alpha value to use for the lines.
   - **min_radius** (= 1) - min radius of the arc.  
-  When not provided, it will draw strokes down to the center coordinates)
-  - **starting_angle** (= 0), **ending_angle** (= TWO_PI) - Says on the tin, try it out... 
+  When not provided, it will draw strokes down to the center coordinates.
+  - **starting_angle** (= 0), **ending_angle** (= TWO_PI) - Says on the tin, try it out...  
   Make sure the starting angle is less than the ending angle. 
   - **angle_increment** (= PI/8) - the amount by which each segment turns.  
   Using PI/8 will give each quarter of circle about 4 strokes/segments.
