@@ -7,7 +7,7 @@ Running sketch.py with no argument draws a semblance of 'Starry Night' from Vinc
 vincent.py implements the following:
 ### **draw_filled_arc()**
 Draws an arc of strokes (See strokes).  
-If the min_angle is not provided, it will draw a filled circle, otherwise more like a rainbow.
+If the min_radius is not provided, it will draw a filled circle, otherwise more like a rainbow.
 
 Parameters:
   - **center_coord** - (x,y) tuple indicating the starting point.
