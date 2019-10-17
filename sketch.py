@@ -1,13 +1,11 @@
 from p5 import *
 
-from curves import draw_filled_arc
-from straights import draw_directional_lines
+from vincent import draw_filled_arc, draw_directional_lines
+from vincent import PaintingStroke
 from color_palette import *
-from painting_stroke import PaintingStroke
 
 canvas_x = 1440
 canvas_y = 900
-#bg_color = (32, 50, 126, 0.5)
 bg_color = (73, 115, 173)
 
 
@@ -21,7 +19,7 @@ def draw():
     # Starry Night ---
     # Sky
     draw_directional_lines((0,   0),
-                           PaintingStroke(50, 6, cp_light_blues + cp_dark_blues * 3 + cp_light_greens),
+                           PaintingStroke(50, 6, cp_light_blues + cp_dark_blues * 6 + cp_light_greens),
                            1440, 400, alpha=0.7, gap_y=0.6)
     draw_directional_lines((0, 400),
                            PaintingStroke(50, 6, cp_light_blues * 4 + cp_dark_blues), 1440, 350, alpha=0.8, gap_y=0.7)
@@ -43,11 +41,6 @@ def draw():
 
     draw_filled_arc((1300, 200), PaintingStroke(40, 8, cp_light_blues + cp_dark_blues * 3), 300, alpha=0.3)
     draw_filled_arc((700, -200), PaintingStroke(40, 8, cp_light_blues + cp_dark_blues * 3), 300, alpha=0.3)
-
-    # Middleground
-    draw_directional_lines((0, 690), PaintingStroke(80, 5, cp_light_greens), 720, 120, gap_y=0.8, alpha=0.8)
-    draw_directional_lines((620, 690),
-                           PaintingStroke(50, 5, cp_light_greens), 900, 120, angle=-PI/16, gap_y=0.8, alpha=0.8)
 
     # Stars
     draw_filled_arc((500, 600), PaintingStroke(30, 5, cp_whites), 100, gap_x=2, gap_y=0.5, alpha=0.8)
@@ -93,26 +86,26 @@ def draw():
     draw_filled_arc((1300, 200), PaintingStroke(40, 4, cp_yellows), 120)
     draw_filled_arc((1300, 200), PaintingStroke(40, 8, cp_yellows), 90, alpha=0.9)
 
+    # Hills
+    draw_directional_lines((0, 690), PaintingStroke(80, 5, cp_light_greens), 720, 120, gap_y=0.8, alpha=0.8)
+    draw_directional_lines((620, 690), PaintingStroke(50, 5, cp_light_greens), 900, 120,
+                           angle=-PI/16, gap_y=0.8, alpha=0.8)
 
     # Foreground
     draw_directional_lines((0, 800), PaintingStroke(60, 8, cp_dark_blues + cp_blacks), 1440, 250, gap_y=0.3)
-    draw_directional_lines((620, 800), PaintingStroke(50, 8, cp_dark_blues + cp_blacks), 900, 180, angle=-PI/16, gap_y=0.3)
-    draw_directional_lines((900, 850), PaintingStroke(50, 8, cp_dark_blues + cp_blacks), 900, 180, angle=-PI/16, gap_y=0.3)
+    draw_directional_lines((620, 800), PaintingStroke(50, 8, cp_dark_blues + cp_blacks), 900, 180,
+                           angle=-PI/16, gap_y=0.3)
+    draw_directional_lines((900, 850), PaintingStroke(50, 8, cp_dark_blues + cp_blacks), 900, 180,
+                           angle=-PI/16, gap_y=0.3)
 
     draw_directional_lines((200, 900), PaintingStroke(60, 8, cp_blacks), 500, 120, angle=-PI/2, gap_y=0.6, alpha=0.8)
     draw_directional_lines((280, 400), PaintingStroke(60, 8, cp_blacks), 350,  35, angle=-PI / 2, gap_y=0.6, alpha=0.8)
+
     draw_directional_lines((320, 900), PaintingStroke(60, 8, cp_blacks), 200, 60, angle=-PI/2, gap_y=0.6, alpha=0.8)
     draw_directional_lines((380, 900), PaintingStroke(60, 8, cp_blacks), 100, 60, angle=-PI / 2, gap_y=0.6, alpha=0.8)
 
-    # Scaffold ---
-    # stroke(255)
-    # stroke_weight(3)
-    # for x in range(100, canvas_x, 100):
-    #     line((x, 0), (x, canvas_y))
-    # for y in range(100, canvas_y, 100):
-    #     line((0,y), (canvas_x,y))
-
     no_loop()
+
 
 if __name__ == '__main__':
     run()
