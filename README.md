@@ -1,6 +1,6 @@
 # vincent
 
-P5 Drawing Extension - Post-impressionist functions (coding challenge)
+P5 Drawing Extension - Post-impressionist functions (small coding challenge)  
 Running sketch.py with no argument draws a semblance of 'Starry Night' from Vincent Van Gogh.
 
 ![Kinda Starry Night](starry-night.png)
@@ -51,8 +51,6 @@ All strokes also have a randomised length, also hard coded.
 The strokes randomly picks a color from the array of colors defined by the PaintingStroke.  
 In the sketch sample, I used multipliers to increase the chance for specific colors to be picked.
 
-## Yeah, I know...
+## Why?
 I just wanted to see if the wobble, and randomising color could look like post-impressionism.  
 With more efforts, maybe...
-
-Silver lining is you get a Readme file.
