@@ -48,7 +48,7 @@ Currently, the random range is hard-coded in the functions.
 
 All strokes also have a randomised length, also hard coded.
 
-The strokes randomly picks a color from the array of colors defined by the PaintingStroke.  
+The strokes randomly pick a color from the array of colors defined by the PaintingStroke.  
 In the sketch sample, I used multipliers to increase the chance for specific colors to be picked.
 
 ## Why?
